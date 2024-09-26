@@ -193,7 +193,7 @@ class Program
             newProducts = (List<Product>)binarySerializer.ReadObject(fs);
         }
 
-        Console.WriteLine("\nUpdated Product List:");
+        Console.WriteLine("\nUpdated Product List :");
         foreach (var product in newProducts)
         {
             Console.WriteLine($"{product.GetType().Name}: Cost = {product.Cost}, Value = {product.Value}");
