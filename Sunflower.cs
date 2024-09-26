@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace HarvestFarm
 {
-    public class Sunflower : Product, ICare
+    [DataContract]
+    public class Sunflower : Product, ICare 
     {
+        [DataMember]
         public int NumFertilizer { get; set; }
+        [DataMember]
         public int NumWater { get; set; }
 
         public Sunflower(int cost, int value, int duration, int fertilizerCost, int waterCost)
@@ -19,6 +23,7 @@ namespace HarvestFarm
             FertilizerCost = fertilizerCost;
             WaterCost = waterCost;
         }
+        public Sunflower() { }
         public override void Seed()
         {
             Console.WriteLine("Seeding Sunflower.");
