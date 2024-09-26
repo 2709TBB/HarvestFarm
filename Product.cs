@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace HarvestFarm
@@ -15,6 +16,11 @@ namespace HarvestFarm
         public int FertilizerCost { get; set; }
         public int WaterCost { get; set; }
 
+        [JsonConstructor]
+        public Product()
+        {
+
+        }
         public int TotalCost
         {
             get { return Cost + FertilizerCost + WaterCost; }
